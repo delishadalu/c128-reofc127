@@ -10,6 +10,7 @@ planets_data = []
 
 time.sleep(10)
 
+
 def scrape():
     for i in range(0, 10):
         print(f'Scrapping page {i+1} ...')
@@ -35,10 +36,7 @@ def scrape():
 
             # add codes here...
 
-
             planets_data.append(temp_list)
-
-            
 
         # Find all elements on the page and click to move to the next page
         browser.find_element(
@@ -49,6 +47,6 @@ scrape()
 headers = ["name", "light_years_from_earth", "planet_mass",
            "stellar_magnitude", "discovery_date"]
 
-df=pd.DataFrame(planets_data,columns=headers)
+df = pd.DataFrame(planets_data, columns=headers)
 
 df.to_csv('expoplanet.csv')
